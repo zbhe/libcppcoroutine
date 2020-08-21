@@ -202,6 +202,7 @@ int main()
 		uint64_t* p = (uint64_t*)CoFib->Resume(nullptr);
 		cout << *p << " ";
 	}
+	delete CoFib;
 	cout << endl;
 	return 0;
 }
