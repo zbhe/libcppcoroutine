@@ -172,10 +172,9 @@ void* Run(void* p)
 
 void* Fib(void*)
 {
-	uint64_t a = 1;
-	uint64_t b = 1;
+	uint64_t a = 0;
+	uint64_t b = 0;
 	uint64_t c = 1;
-	Coroutine::Current()->Yield(&b);
 	while(true){
 		Coroutine::Current()->Yield(&c);
 		a = b;
