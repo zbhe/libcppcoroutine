@@ -4,6 +4,7 @@
 #include<stdlib.h>
 #include<strings.h>
 #include<assert.h>
+#include<stddef.h>
 #include<vector>
 #include<iostream>
 using namespace std;
@@ -151,7 +152,7 @@ struct Coroutine{
 		return (void*)Ret;
 	}
 };
-static_assert((uint64_t)&((Coroutine*)(0))->_Regs == 0);
+static_assert(offsetof(Coroutine, _Regs) == 0);
 uint32_t Coroutine::Index = 0;
 static Coroutine MainCo(nullptr, 0);
 std::vector<Coroutine*> Coroutine::_G{1, &MainCo};
